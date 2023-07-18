@@ -1,18 +1,16 @@
 /// <reference types="cypress" />
 const { it } = require('faker/lib/locales');
-const perfil = require('../fixtures/perfil.json')
+const perfil = require('../fixtures/perfil.json');
 
-
-context('Funcionalidade Login', () => {
+describe('Funcionalidade Login', () => {
    beforeEach(() => {
-      cy.visit('http://lojaebac.ebaconline.art.br/my-account/')
-
+       cy.visit ('http://lojaebac.ebaconline.art.br/my-account/')
    });
    afterEach(() => {
       cy.screenshot()
    });
    
-   it ('Deve fazer login com sucesso ', () => {
+  it('Deve fazer login com sucesso ', () => {
 
       cy.get('#username').type('perfil.usuario')
       cy.get('#password').type('teste@teste.com')
